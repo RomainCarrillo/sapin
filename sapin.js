@@ -1,34 +1,52 @@
 var etages = [];
 nbr_etages = prompt ('Combien de niveaux sur votre sapin ?');
-niveau = document.createElement('p')
 
 
-cadre = Document.querySelectorAll('.cadre');
+cadreGauche = document.getElementById('cadre-1');
+cadreDroite = document.getElementById('cadre-2');
+
 
 for (i = 0; i < nbr_etages; i++) {
     etages.push(i); //remplissage du tableau des étages
 } 
 
-function Rang(e) {
-    for (let i = 0; i < e + 1; i++) {        
-        console.log("\\"); 
+function Rang(e) { //le nombre de \ par rang
+    rang = "";
+    for (let i = 0; i < e + 1 ; i++) {        
+        rang = rang + "\\";
     }
+    return "<span>" + rang + "</span><br>";
 }
 
-function Etage(e) {
-    for (i = 0; i < e + 3; i++) {
-        Rang(i);
-        console.log("\n");
+function Etage(e) { //créer les étages en ajoutant le nombre de rangs correpondant à l'étage
+    etage = "";
+    for (i = 0; i < e + 3; i++) { 
+        etage = etage + Rang(i);
     }
+    return etage;
 }
 
-for (let i = 0; i < nbr_etages; i++ ) {
+for (let i = 0; i < nbr_etages; i++ ) { //créer le nombre d'étages souhaité
     Etage(i);
+    brancheGauche = document.createElement('span');
+    brancheGauche.innerHTML= Etage(i);
+    brancheDroite = document.createElement('span');
+    brancheDroite.innerHTML= Etage(i);
+    cadreGauche.appendChild(brancheGauche);
+    cadreDroite.appendChild(brancheDroite);
 }
 
 function Pied() {
-
+    piedDroit = document.createElement('span');
+    piedDroit.innerHTML = "<span>|</span><br><span>|</span>";
+    cadreDroite.appendChild(piedDroit);
+    piedGauche = document.createElement('span');
+    piedGauche.innerHTML = "<span>|</span><br><span>|</span>";
+    cadreGauche.appendChild(piedGauche);
 }
+
+Pied();
+
 
 /*ajouter 1 élements au tableau a chaque nombre d'étage*/
 

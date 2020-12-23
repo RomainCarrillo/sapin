@@ -6,7 +6,9 @@
   }
   
   .box div {
-    width: 100px;
-    height: 100px;
-    border-style: solid;
+    width: 100px; /*Passer en auto*/
+    height: 100px; /*Passer en auto*/
+    border-style: solid; /*A retirer ensuite*/
   }
+
+  /*Rotation 180° du bloc de gauche sur l'axe des y à partir du centre*/
