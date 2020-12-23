@@ -6,9 +6,33 @@
   }
   
   .box div {
-    width: 100px; /*Passer en auto*/
-    height: 100px; /*Passer en auto*/
-    border-style: solid; /*A retirer ensuite*/
+    width: auto;
+    height: auto;
+    color: green;
+    font-weight: bolder;
+    font-size: larger;
+    /*border-style: solid;*/
   }
+
+    .pied {
+      color: #6E2C00;
+     }
+
+    .etoile {
+      color: yellow;
+    }
+
+  #cadre-1 {
+    transform: scaleX(-1);
+  }
+
+  #main-box {
+    flex-direction: column;
+  }
+
+  #second-box {
+    min-height: auto;
+  }
+
 
   /*Rotation 180° du bloc de gauche sur l'axe des y à partir du centre*/
