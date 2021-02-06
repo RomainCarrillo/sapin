@@ -1,14 +1,27 @@
 // Déclaration des variables
 
-var etages = [];
-dernierRang = "";
-premierRang = "";
-
+curseur = document.getElementById('etages');
 cadreGauche = document.getElementById('cadre-1');
 cadreDroite = document.getElementById('cadre-2');
 star = document.getElementById('star');
+bandeau = document.getElementById('bandeau');
+
+var etages = [];
+nbrEtages = "";
+dernierRang = "";
+premierRang = "";
 
 // Déclaration des fonctions
+
+
+function CreationEtages() {
+    for (let i = 0; i < nbrEtages; i++ ) {                                 // Créer le nombre d'étages souhaité en faisant une itiration par étage
+        PremierRang();
+        etage = Etage(i);                                                   // On appelle la fonction étage avec l'index de l'étage en paramètre et on stocke la valeur retourée pour un usage ultérieur
+        ElmtHtmlEtage(cadreGauche, etage);
+        ElmtHtmlEtage(cadreDroite, etage);
+    }
+}
 
 function Pied(c) {
     pied = document.createElement('span');
@@ -24,6 +37,12 @@ function Etoile() {
     star.appendChild(etoile);
 }
 
+function Bandeau() {
+    texte = document.createElement('p');
+    texte.innerHTML = "<p>Joyeux Noël !</p>";
+    bandeau.appendChild(texte);
+}
+
 function ElmtHtmlEtage(cadre, etage) {                                  // Création des éléments html des étages et ajout au DOM
     elmt = document.createElement('span');
     elmt.innerHTML= etage;
@@ -31,7 +50,7 @@ function ElmtHtmlEtage(cadre, etage) {                                  // Créa
 }
 
 function Rang(e) {                                                      // Créer les rangs en ajoutant le nombre de \
-    rang = premierRang;                                                 // Le nombre de \ du premier rang est défini en fonction de l'étage précédent
+    rang = premierRang;                                               // Le nombre de \ du premier rang est défini en fonction de l'étage précédent
     for (let i = 0; i < e + 1 ; i++) {                                  // Le nombre de \ est l'index du rang + 1
         rang = rang + "\\";                                             // On ajoute à chaque tour un \ au précédent
     }
@@ -52,21 +71,37 @@ function PremierRang() {                                                // Défi
     return premierRang;
 }
 
-// Début du programme
-
-nbr_etages = prompt ('Combien de niveaux sur votre sapin ?');
-
-for (i = 0; i < nbr_etages; i++) {
-    etages.push(i);                                                     //remplissage du tableau des étages
-} 
-
-for (let i = 0; i < nbr_etages; i++ ) {                                 // Créer le nombre d'étages souhaité en faisant une itiration par étage
-    PremierRang();
-    etage = Etage(i);                                                   // On appelle la fonction étage avec l'index de l'étage en paramètre et on stocke la valeur retourée pour un usage ultérieur
-    ElmtHtmlEtage(cadreGauche, etage);
-    ElmtHtmlEtage(cadreDroite, etage);
+function Nettoyage() {
+    Vidange(cadreDroite);
+    Vidange(cadreGauche);
+    Vidange(star);
+    Vidange(bandeau);    
+    nbrEtages = 0;
+    premierRang = "";
+    dernierRang = "";
 }
 
-Pied(cadreGauche);
-Pied(cadreDroite);
-Etoile();
+function Vidange(a) {
+    a.innerHTML = "";
+    return a;
+}
+
+function Sapin() {
+    Nettoyage();
+    nbrEtages = curseur.value;
+    CreationEtages();
+    Pied(cadreGauche);
+    Pied(cadreDroite);
+    Etoile();
+    Bandeau();
+}
+
+// Début du programme
+
+curseur.addEventListener("input", Sapin)
+;
+
+/* 
+Ajouter une fonction pour retirer x étages où x est la différence entre le nombre d'étages actuel et le nombre d'étages souhaité (itération sur x avec removechild)
+Ajouter une condition qui compare les nombre d'étages actuel au nombre d'étage souhaité et appelle soit la fonction pour retirer des étages soit la fonction pour ajouter des étages
+*/

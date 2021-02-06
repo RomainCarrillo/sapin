@@ -20,19 +20,29 @@
 
     .etoile {
       color: yellow;
+
     }
 
-  #cadre-1 {
-    transform: scaleX(-1);
-  }
+    
+    #main-box {
+      flex-direction: row;
+    }
+    
+    #second-box {
+      min-height: auto;
+    }
+    
+    #sapin {
+      flex-direction: column;
+    }
+    
+    #cadre-1 {
+      transform: scaleX(-1);
+    }
 
-  #main-box {
-    flex-direction: column;
-  }
-
-  #second-box {
-    min-height: auto;
-  }
-
-
+    #curseur-box {
+      flex-direction: column;
+    }
+    
+    
   /*Rotation 180° du bloc de gauche sur l'axe des y à partir du centre*/
