@@ -43,7 +43,14 @@ function Bandeau() {
     bandeau.appendChild(texte);
 }
 
-function ElmtHtmlEtage(cadre, etage) {                                  // Création des éléments html des étages et ajout au DOM
+function texte() {
+    texte = document.createElement('span');
+    texte.innerHTML = "<span>&#9733</span>";
+    texte.className = "texte";
+    star.appendChild(texte);
+}
+
+function ElmtHtmlEtage(cadre, etage) {
     elmt = document.createElement('span');
     elmt.innerHTML= etage;
     cadre.appendChild(elmt);
