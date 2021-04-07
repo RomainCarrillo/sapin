@@ -1,0 +1,47 @@
+Merry Christmas !
+
+Here's a little challenge to myself for Christmas 2020.
+
+My goal : Create a small program that generate and show a  Christmas tree's silhouette from a desired number of levels.
+
+The silhouette is made out of lines of "\" arranged to make several superimposed triangles.
+Once the patern was defined, I concieved and coded the algorithm.
+I used Flexbox in my CSS to deal with the elements' Alignment and centering.
+To simplified the script I choosed to use CSS "tranform : scaleX" property to generate the left half part of the Christmas tree.
+=> Please feel free to share feed back !
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+How to instal : 
+Just dowload the 3 files :
+-> Html
+-> CSS
+-> JS
+Save in the same folder and open the html file in your browser.
+
+To generate the Christmas Tree, use the cursor. You can regenerate it as much as you want. 
+The tree's size is limited between 0 and 5 levels.
+
+ =====================================================================================================================================================================
+
+Joyeux Noël !
+
+Un petit défi que je me suis lancé à Noël 2020.
+
+Objectif : Créer un petit programme pour générer et afficher une silhouette de sapin de Noël du nombre d'étages souhaité.
+
+La silhouette est composée de lignes de "\" agencées de façon à donner une superposition de triangles de plus en plus grands. 
+Une fois le paterne conçu, j'ai imaginé et codé l'algorithme permettant d'afficher le résultat en fonction du nombre d'étage souhaité.
+L'alignement et le centrage des éléments sont géré en CSS grâce à Flexbox.
+Pour simplifier le script j'ai choisi d'utiliser la propriété CSS "tansform :scaleX" pour gérer la moitié gauche du sapin.
+=> N'hésitez pas à me faire part de vos remarques ! 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Comment l'utiliser :  
+Télécharger les 3 fichiers :
+-> Html
+-> CSS
+-> JS
+Sauvegardez les dans le même dossier et ouvrez le fichier html dans votre navigateur.
+
+Pour générer le sapin, utilisez le curseur. Vous pour le générer autant de fois que vous le voulez.
+La taille du sapin est limitée, comprise entre 0 et 5 étages. 
